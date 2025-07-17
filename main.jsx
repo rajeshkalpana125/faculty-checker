@@ -3,19 +3,16 @@ import { createRoot } from "react-dom/client";
 
 const timetable = {
   RS: {
-    Monday: ["9:00-10:00", "1:00-2:00"],
-    Tuesday: ["10:00-11:00"],
-    Wednesday: [],
-    Thursday: ["11:00-12:00"],
-    Friday: ["9:00-10:00"],
+    Monday: ["10:40-11:30", "13:10-14:00"],
+    Tuesday: ["09:50-10:40"],
+    Thursday: ["11:30-12:20"],
+    Friday: ["09:00-09:50"]
   },
   SP: {
-    Monday: ["10:00-11:00"],
-    Tuesday: ["1:00-2:00"],
-    Wednesday: ["11:00-12:00"],
-    Thursday: ["9:00-10:00"],
-    Friday: [],
-  },
+    Monday: ["10:40-11:30", "12:20-13:10"],
+    Wednesday: ["11:30-12:20"],
+    Thursday: ["09:00-09:50"]
+  }
 };
 
 function App() {
@@ -37,9 +34,9 @@ function App() {
   return (
     <div style={{ padding: 20, fontFamily: "Arial" }}>
       <h1>Faculty Availability Checker</h1>
-      <input placeholder="Faculty Short Name" onChange={(e) => setShortName(e.target.value)} /><br /><br />
+      <input placeholder="Faculty Short Name (e.g., RS)" onChange={(e) => setShortName(e.target.value)} /><br /><br />
       <input placeholder="Day (e.g., Monday)" value={day} onChange={(e) => setDay(e.target.value)} /><br /><br />
-      <input placeholder="Time Slot (e.g., 9:00-10:00)" onChange={(e) => setTime(e.target.value)} /><br /><br />
+      <input placeholder="Time Slot (e.g., 10:40-11:30)" onChange={(e) => setTime(e.target.value)} /><br /><br />
       <button onClick={checkAvailability}>Check</button>
       <div style={{ marginTop: 20 }}>Status: {status}</div>
     </div>
